@@ -16,6 +16,31 @@ header {
     padding: 50px 0;
 }
 
+.line-section {
+    width: 300px;
+}
+
+.row-product {
+    margin-bottom: 10px;
+}
+
+.product-list {
+    padding-top: 50px;
+}
+
+.product-container img {
+    width: 50%;
+    position: relative;
+}
+
+.product-container .info {
+    background-color: #5fd693;
+    width: 50%;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+}
+
 #mainNav {
     background-color: rgba(0, 0, 0, 0);
 }

@@ -49,10 +49,121 @@
         <section class="page-section" id="product">
             <div class="container">
                 <h1 class="text-center">Product</h1>
+                <div class="text-center">
+                    <img src="img/line.png" class="line-section" >
+                </div>
+                <div class="product-list">
+                    <div class="row row-product">
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_1.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 1</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 2</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 3</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-product">
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_1.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 1</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 2</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 3</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-product">
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_1.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 1</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 2</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-4 product-container">
+                            <div class="row">
+                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="info">
+                                    <p class="font-weight-bold">Product 3</p>
+                                    <p>Buah tomat dari perkebunan ...</p>
+                                    <button type="button" class="btn btn-light">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
             </div>
         </section>
         <footer>
-
+            footer
         </footer>
     </body>
 </html>
