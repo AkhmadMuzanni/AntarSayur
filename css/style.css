@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-image: url('../img/1.jpg');
+    background-attachment: scroll;
+}
+
+.header {
+    padding-top: 175px;
+    padding-bottom: 175px;
+}
+
+.page-section {
+    padding: 50px 0;
+}
+
+#mainNav {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#title {
+    font-size: 35pt;
+}
+
+#subtitle {
+    font-size: 60pt;
+}
