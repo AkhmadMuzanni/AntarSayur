@@ -7,6 +7,12 @@ header {
     background-attachment: scroll;
 }
 
+footer {
+    background-color: #2c7873;
+    padding: 10px 0;
+    text-align: center;
+}
+
 .header {
     padding-top: 175px;
     padding-bottom: 175px;
@@ -34,11 +40,26 @@ header {
 }
 
 .product-container .info {
-    background-color: #5fd693;
+    background-color: #c0ffb3;
     width: 50%;
     position: relative;
     padding-top: 10px;
     text-align: center;
+}
+
+.sub-section-title {
+    font-size: 15pt;
+}
+
+.maps-contact {
+    width: 300px;
+}
+
+.line-subtitle {
+    width: 90%;
+    height: 1px;
+    border-bottom: 3px solid black;
+    margin-bottom: 15px;
 }
 
 #mainNav {
@@ -51,4 +72,9 @@ header {
 
 #subtitle {
     font-size: 60pt;
+}
+
+#contact {
+    background-color: #52de97;
+    padding: 40px 0;
 }

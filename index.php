@@ -162,8 +162,41 @@
                 
             </div>
         </section>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="sub-section-title">TENTANG KAMI</h4>
+                        <div class="line-subtitle"></div>
+                        <p>AntarSayur.id adalah suatu platform digital untuk pemesanan sayur secara digital yang ditangani secara profesional</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="sub-section-title">LOKASI</h4>
+                        <div class="line-subtitle"></div>
+                        <img class="maps-contact" src="img/maps.png" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="sub-section-title">KONTAK KAMI</h4>
+                        <div class="line-subtitle"></div>
+                        <div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nama</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Pesan Anda</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pesan Anda"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success float-right">KIRIM</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer>
-            footer
+            Copyright Republic Visual @2020
         </footer>
     </body>
 </html>
