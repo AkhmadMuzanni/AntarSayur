@@ -15,30 +15,33 @@
         <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-                <a class="navbar-brand" href="#">AntarSayur.id</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUCT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">KONTAK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">LOGIN</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div id="container-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+                    <a class="navbar-brand" href="#">AntarSayur.id</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold" href="#">HOME <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="#product">PRODUCT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="#contact">KONTAK</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="#">LOGIN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
+        
     
         <header class="header">
             <div class="container">
@@ -56,8 +59,10 @@
                     <div class="row row-product">
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_1.jpg" alt="">
-                                <div class="info">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
+                                </div>
+                                <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
                                     <button type="button" class="btn btn-light">ORDER</button>
@@ -67,7 +72,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_2.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -78,7 +85,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_3.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -91,8 +100,10 @@
                     <div class="row row-product">
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_1.jpg" alt="">
-                                <div class="info">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
+                                </div>
+                                <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
                                     <button type="button" class="btn btn-light">ORDER</button>
@@ -102,7 +113,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_2.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -113,7 +126,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_3.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -126,8 +141,10 @@
                     <div class="row row-product">
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_1.jpg" alt="">
-                                <div class="info">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
+                                </div>
+                                <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
                                     <button type="button" class="btn btn-light">ORDER</button>
@@ -137,7 +154,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_2.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_2.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -148,7 +167,9 @@
 
                         <div class=" col-md-4 product-container">
                             <div class="row">
-                                <img src="img/product/product_3.jpg" alt="">
+                                <div class="col-md-6">
+                                    <img class="img-product" src="img/product/product_3.jpg" alt="">
+                                </div>
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
@@ -198,5 +219,8 @@
         <footer>
             Copyright Republic Visual @2020
         </footer>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
