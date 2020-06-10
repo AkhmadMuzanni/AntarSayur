@@ -7,6 +7,7 @@
         <title>AntarSayur</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/bootstrap.css" rel="stylesheet" />
@@ -65,7 +66,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +92,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +107,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +120,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +133,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +148,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +161,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +174,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-light">ORDER</button>
+                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
                                 </div>
                             </div>
                         </div>
