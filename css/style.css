@@ -1,11 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
 }
 
-header {
-    background-image: url('../img/1.jpg');
-    background-attachment: scroll;
-}
+header {}
 
 footer {
     background-color: #2c7873;
@@ -14,8 +15,11 @@ footer {
 }
 
 .header {
-    padding-top: 175px;
-    padding-bottom: 175px;
+    background-image: url('../img/background1.png');
+    background-size: cover;
+    background-attachment: scroll;
+    padding-top: 325px;
+    padding-bottom: 300px;
 }
 
 .page-section {

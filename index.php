@@ -25,8 +25,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link font-weight-bold" href="#">HOME <span class="sr-only">(current)</span></a>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="#home">HOME <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold" href="#product">PRODUCT</a>
@@ -44,12 +44,12 @@
         </div>
         
     
-        <header class="header">
+        <section class="header" id="home">
             <div class="container">
-                <h3 class="text-center text-white" id="title">Selamat Datang</h3>
-                <h1 class="text-center text-white" id="subtitle">AntarSayur.id</h1>
+                <!-- <h3 class="text-center text-white" id="title">Selamat Datang</h3> -->
+                <!-- <h1 class="text-center text-white" id="subtitle">AntarSayur.id</h1> -->
             </div>
-        </header>
+        </section>
         <section class="page-section" id="product">
             <div class="container">
                 <h1 class="text-center">Product</h1>
