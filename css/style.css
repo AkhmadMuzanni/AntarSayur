@@ -71,6 +71,18 @@ footer {
     margin-bottom: 15px;
 }
 
+#body-login {
+    background-color: #2c7873;
+}
+
+#container-login {
+    background-color: white;
+    width: 30%;
+    margin: 80px auto 0 auto;
+    padding: 20px 30px;
+    height: 350px;
+}
+
 #mainNav {
     background-color: rgba(0, 0, 0, 0);
 }

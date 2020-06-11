@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('db.php');
     $no_telp = '6285749420404';
     $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
