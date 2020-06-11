@@ -1,3 +1,8 @@
+<?php
+    $no_telp = '6285749420404';
+    $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
+    $nama_product = 'Product+Ini';
+?>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -66,7 +71,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +84,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +97,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +112,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +125,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +138,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +153,7 @@
                                 <div class="col-md-6 info">
                                     <p class="font-weight-bold">Product 1</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +166,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 2</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +179,7 @@
                                 <div class="info">
                                     <p class="font-weight-bold">Product 3</p>
                                     <p>Buah tomat dari perkebunan ...</p>
-                                    <button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button>
+                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
                                 </div>
                             </div>
                         </div>
