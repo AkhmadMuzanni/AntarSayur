@@ -48,43 +48,24 @@
         <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="container-nav">
+        <div id="container-nav-admin">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-                    <a class="navbar-brand" href="#">AntarSayur.id</a>
+                    <a class="navbar-brand text-white" href="#">AntarSayur.id</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold nav-link-section" href="#home">HOME <span class="sr-only">(current)</span></a>
+                                <a class="nav-link font-weight-bold text-white" href="#home">BERANDA <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold nav-link-section" href="#product">PRODUCT</a>
+                                <a class="nav-link font-weight-bold text-white" href="#product">PRODUCT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold nav-link-section" href="#contact">KONTAK</a>
+                                <a class="nav-link font-weight-bold text-white" href="logout.php">LOGOUT</a>
                             </li>
-                            <?php 
-                            if(isset($_SESSION["username"])){
-                                if($_SESSION['username'] == true && $_SESSION['password'] == true){
-                                    echo '<li class="nav-item">';
-                                    echo '<a class="nav-link font-weight-bold" href="admin.php">ADMIN</a>';
-                                    echo '</li>';
-                                } else {
-                                    echo '<li class="nav-item">';
-                                    echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
-                                    echo '</li>';
-                                }
-                            } else {
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
-                                echo '</li>';
-                            }
-                            
-                            ?>
-                            
                         </ul>
                     </div>
                 </nav>

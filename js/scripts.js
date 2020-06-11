@@ -1,6 +1,6 @@
 // var cw = $('.img-product').width();
 // $('.img-product').css({ 'height': cw + 'px' });
-let mainNavLinks = document.querySelectorAll("nav ul li a");
+let mainNavLinks = document.querySelectorAll(".nav-link-section");
 let mainSections = document.querySelectorAll("main section");
 
 let lastId;

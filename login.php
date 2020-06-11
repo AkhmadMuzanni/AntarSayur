@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once('db.php');
+    
     $no_telp = '6285749420404';
     $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
     $nama_product = 'Product+Ini';
@@ -52,19 +53,29 @@
             <div id="container-login">
                 <h1 class="text-center">AntarSayur</h1>
                 <p class="text-center">Masukkan Username dan Password</p>
-                <div>
-                    <form>
+                
+                    <form action="loginProses.php" method="post">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="string" class="form-control" id="username" placeholder="Username">
+                            <input type="string" class="form-control" name="username" id="username" placeholder="Username">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Username">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                         </div>
+                        <?php 
+                        if(isset($_SESSION["username"])){
+                            if($_SESSION['username'] == false){
+                                echo "<p class=\"text-center text-danger\">Username Salah</p>";
+                            } else if ($_SESSION['password'] == false){
+                                echo "<p class=\"text-center text-danger\">Password Salah</p>";
+                            }
+                        }
+                        ?>
                         <button type="submit" class="btn btn-success float-right">MASUK</button>
+                        <div class="clearfix"></div>
                     </form>
-                </div>
+                
             </div>
         </section>
         <footer>
