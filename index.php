@@ -1,7 +1,33 @@
 <?php
+    require_once('db.php');
     $no_telp = '6285749420404';
     $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
     $nama_product = 'Product+Ini';
+    
+    $sql="SELECT * FROM product";
+          
+    $data_product = array(); 
+
+    if ($result=mysqli_query($link,$sql)){
+        while ($row=mysqli_fetch_row($result)){
+            array_push($data_product, array($row[0], $row[1], $row[2]));
+        }
+    }
+
+    $arrayProduct = array();
+    $tempArray = array();
+
+    for ($i=0; $i < count($data_product) ; $i++) { 
+        array_push($tempArray, $data_product[$i]);
+        if(count($tempArray) == 3 || $i == count($data_product) - 1){
+            array_push($arrayProduct, $tempArray);
+            $tempArray = array();
+        }
+    }
+
+    // print_r($arrayProduct);
+
+    mysqli_close($link);
 ?>
 <html>
     <head>
@@ -62,7 +88,7 @@
                     <img src="img/line.png" class="line-section" >
                 </div>
                 <div class="product-list">
-                    <div class="row row-product">
+                    <!-- <div class="row row-product">
                         <div class=" col-md-4 product-container">
                             <div class="row">
                                 <div class="col-md-6">
@@ -101,90 +127,27 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row row-product">
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
-                                </div>
-                                <div class="col-md-6 info">
-                                    <p class="font-weight-bold">Product 1</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_2.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <p class="font-weight-bold">Product 2</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_3.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <p class="font-weight-bold">Product 3</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row row-product">
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
-                                </div>
-                                <div class="col-md-6 info">
-                                    <p class="font-weight-bold">Product 1</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_2.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <p class="font-weight-bold">Product 2</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" col-md-4 product-container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="img-product" src="img/product/product_3.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <p class="font-weight-bold">Product 3</p>
-                                    <p>Buah tomat dari perkebunan ...</p>
-                                    <a href="<?php echo "https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . $nama_product; ?>"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>  ORDER</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    </div> -->
+                    <?php 
+                    for ($i=0; $i < count($arrayProduct) ; $i++) { 
+                        echo "<div class=\"row row-product\">";
+                        for ($j=0; $j < count($arrayProduct[$i]) ; $j++) { 
+                            echo "<div class=\" col-md-4 product-container\">";
+                            echo "<div class=\"row\">";
+                            echo "<div class=\"col-md-6\">";
+                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][2] ."\">";
+                            echo "</div>";
+                            echo "<div class=\"col-md-6 info\">";
+                            echo "<p class=\"font-weight-bold\">". $arrayProduct[$i][$j][1] ."</p>";
+                            echo "<p>Buah tomat dari perkebunan ...</p>";
+                            echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  ORDER</button></a>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                        echo "</div>";
+                    }
+                    ?>
                 </div>
                 
             </div>
