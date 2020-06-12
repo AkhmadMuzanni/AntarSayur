@@ -40,6 +40,7 @@ $(".btn-edit").on('click', function(event) {
     $('#keteranganProduk').val('Produk Baru Kami');
     $('#function').val('editProduk');
     $('#modal-title').html("Edit Produk");
+    $("#labelGambar").html("Pilih Gambar");
 });
 
 $("#btn-tambah").on('click', function(event) {
@@ -48,9 +49,14 @@ $("#btn-tambah").on('click', function(event) {
     $('#keteranganProduk').val('');
     $('#function').val('tambahProduk');
     $('#modal-title').html("Tambah Produk");
+    $("#labelGambar").html("Pilih Gambar");
 });
 
 $(".btn-delete").on('click', function(event) {
     console.log($(this).closest('.product-container').find('.idProduk').val());
     $('#idProdukHapus').val($(this).closest('.product-container').find('.idProduk').val());
+});
+
+$("#gambarProduk").on('change', function(event) {
+    $("#labelGambar").html($(this).val().replace("C:\\fakepath\\", ""));
 });

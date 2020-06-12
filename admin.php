@@ -182,7 +182,7 @@
                             <div class="col-sm-8">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="gambarProduk" name="gambarProduk">
-                                    <label class="custom-file-label" for="gambarProduk">Pilih Gambar...</label>
+                                    <label class="custom-file-label" for="gambarProduk" id="labelGambar">Pilih Gambar...</label>
                                 </div>
                             </div>
                         </div>
