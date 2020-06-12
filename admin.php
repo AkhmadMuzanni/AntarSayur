@@ -58,7 +58,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold text-white" href="#home">BERANDA <span class="sr-only">(current)</span></a>
+                                <a class="nav-link font-weight-bold text-white" href="index.php">BERANDA <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold text-white" href="#product">PRODUCT</a>
@@ -72,20 +72,18 @@
             </div>
         </div>
         
-    
-        <section class="header" id="home">
-            <div class="container">
-                <!-- <h3 class="text-center text-white" id="title">Selamat Datang</h3> -->
-                <!-- <h1 class="text-center text-white" id="subtitle">AntarSayur.id</h1> -->
-            </div>
-        </section>
+            
         <section class="page-section" id="product">
-            <div class="container">
-                <h1 class="text-center">Product</h1>
+            <div class="container" id="product-admin">
+                <h1 class="text-center">Produk Saya</h1>
                 <div class="text-center">
                     <img src="img/line.png" class="line-section" >
                 </div>
-                <div class="product-list">
+                <div>
+                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myModal">TAMBAH PRODUK</button>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="product-list product-list-admin">
                     <!-- <div class="row row-product">
                         <div class=" col-md-4 product-container">
                             <div class="row">
@@ -150,42 +148,53 @@
                 
             </div>
         </section>
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h4 class="sub-section-title">TENTANG KAMI</h4>
-                        <div class="line-subtitle"></div>
-                        <p>AntarSayur.id adalah suatu platform digital untuk pemesanan sayur secara digital yang ditangani secara profesional</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="sub-section-title">LOKASI</h4>
-                        <div class="line-subtitle"></div>
-                        <img class="maps-contact" src="img/maps.png" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="sub-section-title">KONTAK KAMI</h4>
-                        <div class="line-subtitle"></div>
-                        <div>
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Pesan Anda</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pesan Anda"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-success float-right">KIRIM</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <footer>
             Copyright Republic Visual @2020
         </footer>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form method="post" action="controller.php" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Tambah Produk</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label for="namaProduk" class="col-sm-4 col-form-label">Nama Product</label>
+                            <div class="col-sm-8">
+                            <input type="text" class="form-control" id="namaProduk" name="namaProduk" placeholder="Nama Produk">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="keteranganProduk" class="col-sm-4 col-form-label">Keterangan</label>
+                            <div class="col-sm-8">
+                            <input type="text" class="form-control" id="keteranganProduk" name="keteranganProduk" placeholder="Keterangan">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="gambarProduk" class="col-sm-4 col-form-label">Gambar</label>    
+                            <div class="col-sm-8">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="gambarProduk" name="gambarProduk">
+                                    <label class="custom-file-label" for="gambarProduk">Pilih Gambar...</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="function" value="simpanProduk">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>

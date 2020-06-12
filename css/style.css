@@ -112,3 +112,11 @@ footer {
     z-index: 1030;
     width: 100%;
 }
+
+#product-admin {
+    padding-top: 50px;
+}
+
+.product-list-admin {
+    padding-top: 20px;
+}
