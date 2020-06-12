@@ -12,5 +12,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-grid.css" rel="stylesheet" />
     <link href="css/bootstrap-reboot.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
     <link href="css/style.css" rel="stylesheet" />
 </head>

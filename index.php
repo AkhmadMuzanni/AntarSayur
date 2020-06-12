@@ -167,7 +167,25 @@
                     <div class="col-md-4">
                         <h4 class="sub-section-title">LOKASI</h4>
                         <div class="line-subtitle"></div>
-                        <img class="maps-contact" src="img/maps.png" alt="">
+                        <div id="maps-contact">
+                            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+                            <script>
+                                // initialize the map
+                                // var map = L.map('maps-contact').setView([51.505, -0.09], 13);
+                                var map = L.map('maps-contact').setView([-7.9448811,112.6550979], 13);
+
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                }).addTo(map);
+
+                                // L.marker([51.5, -0.09]).addTo(map)
+                                //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                                //     .openPopup();
+                                L.marker([-7.9448811,112.6550979]).addTo(map)
+                                    .bindPopup('Republic Visual Malang')
+                                    .openPopup();
+                            </script>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <h4 class="sub-section-title">KONTAK KAMI</h4>
