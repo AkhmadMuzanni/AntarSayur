@@ -37,7 +37,7 @@ window.addEventListener("scroll", event => {
 $(".btn-edit").on('click', function(event) {
     $('#namaProduk').val($(this).closest('.product-container').find('.namaProduk').html());
     $('#idProduk').val($(this).closest('.product-container').find('.idProduk').val());
-    $('#keteranganProduk').val('Produk Baru Kami');
+    $('#keteranganProduk').val($(this).closest('.product-container').find('.keteranganProduk').html());
     $('#function').val('editProduk');
     $('#modal-title').html("Edit Produk");
     $("#labelGambar").html("Pilih Gambar");

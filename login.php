@@ -51,7 +51,9 @@
     <body id="body-login">
         <section>
             <div id="container-login">
-                <h1 class="text-center">AntarSayur</h1>
+                <div class="text-center">
+                    <img src="img/logo.png" alt="" id="login-logo">
+                </div>                
                 <p class="text-center">Masukkan Username dan Password</p>
                 
                     <form action="loginProses.php" method="post">
@@ -73,6 +75,7 @@
                         }
                         ?>
                         <button type="submit" class="btn btn-success float-right">MASUK</button>
+                        <a href="index.php"><p id="back-login">< Kembali ke Beranda</p></a> 
                         <div class="clearfix"></div>
                     </form>
                 

@@ -11,7 +11,7 @@
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
-            array_push($data_product, array($row[0], $row[1], $row[2]));
+            array_push($data_product, array($row[0], $row[1], $row[2], $row[3]));
         }
     }
 
@@ -31,27 +31,14 @@
     mysqli_close($link);
 ?>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>AntarSayur</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.css" rel="stylesheet" />
-        <link href="css/bootstrap-grid.css" rel="stylesheet" />
-        <link href="css/bootstrap-reboot.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-    </head>
+    <?php include 'header.php' ?>    
     <body>
         <div id="container-nav-admin">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-                    <a class="navbar-brand text-white" href="#">AntarSayur.id</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo_samping3.png" id="nav-logo">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -131,11 +118,11 @@
                             echo "<div class=\" col-md-4 product-container\">";
                             echo "<div class=\"row\">";
                             echo "<div class=\"col-md-6\">";
-                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][2] ."\">";
+                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][3] ."\">";
                             echo "</div>";
                             echo "<div class=\"col-md-6 info\">";
                             echo "<p class=\"font-weight-bold namaProduk\">". $arrayProduct[$i][$j][1] ."</p>";
-                            echo "<p>Buah tomat dari perkebunan ...</p>";
+                            echo "<p class=\"keteranganProduk\">". $arrayProduct[$i][$j][2] ."</p>";
                             echo "<input type=\"hidden\" class=\"idProduk\" value=\"".$arrayProduct[$i][$j][0]."\"></input>";
                             echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button>";
                             echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete\" data-toggle=\"modal\" data-target=\"#modalDelete\"><i class=\"fa fa-trash\"></i></button>";
@@ -150,7 +137,7 @@
                 
             </div>
         </section>
-        <footer>
+        <footer class="text-white">
             Copyright Republic Visual @2020
         </footer>
 
