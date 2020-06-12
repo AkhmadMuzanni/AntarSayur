@@ -137,8 +137,8 @@
                             echo "<p class=\"font-weight-bold namaProduk\">". $arrayProduct[$i][$j][1] ."</p>";
                             echo "<p>Buah tomat dari perkebunan ...</p>";
                             echo "<input type=\"hidden\" class=\"idProduk\" value=\"".$arrayProduct[$i][$j][0]."\"></input>";
-                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\"  data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button></a>";
-                            echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-danger btn-admin\"><i class=\"fa fa-trash\"></i></button></a>";
+                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete\" data-toggle=\"modal\" data-target=\"#modalDelete\"><i class=\"fa fa-trash\"></i></button>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
@@ -189,8 +189,32 @@
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="idProduk" id="idProduk" value="0">
-                        <input type="hidden" name="function" id="function" value="simpanProduk">
+                        <input type="hidden" name="function" id="function" value="tambahProduk">
                         <button type="submit" class="btn btn-success" id="btn-simpan">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal Delete-->
+        <div id="modalDelete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form method="post" action="controller.php" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-title">Konfirmasi</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Apakah Anda yakin akan menghapus Produk Ini?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="idProduk" id="idProdukHapus" value="0">
+                        <input type="hidden" name="function" id="function" value="deleteProduk">
+                        <button type="submit" class="btn btn-danger" id="btn-simpan">HAPUS</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">KEMBALI</button>
                     </div>
                 </form>
             </div>

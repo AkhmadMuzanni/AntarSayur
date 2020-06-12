@@ -49,3 +49,8 @@ $("#btn-tambah").on('click', function(event) {
     $('#function').val('tambahProduk');
     $('#modal-title').html("Tambah Produk");
 });
+
+$(".btn-delete").on('click', function(event) {
+    console.log($(this).closest('.product-container').find('.idProduk').val());
+    $('#idProdukHapus').val($(this).closest('.product-container').find('.idProduk').val());
+});
