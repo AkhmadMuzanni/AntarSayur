@@ -80,7 +80,7 @@
                     <img src="img/line.png" class="line-section" >
                 </div>
                 <div>
-                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myModal">TAMBAH PRODUK</button>
+                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myModal" id="btn-tambah">TAMBAH PRODUK</button>
                     <div class="clearfix"></div>
                 </div>
                 <div class="product-list product-list-admin">
@@ -134,9 +134,11 @@
                             echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][2] ."\">";
                             echo "</div>";
                             echo "<div class=\"col-md-6 info\">";
-                            echo "<p class=\"font-weight-bold\">". $arrayProduct[$i][$j][1] ."</p>";
+                            echo "<p class=\"font-weight-bold namaProduk\">". $arrayProduct[$i][$j][1] ."</p>";
                             echo "<p>Buah tomat dari perkebunan ...</p>";
-                            echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  ORDER</button></a>";
+                            echo "<input type=\"hidden\" class=\"idProduk\" value=\"".$arrayProduct[$i][$j][0]."\"></input>";
+                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\"  data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button></a>";
+                            echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-danger btn-admin\"><i class=\"fa fa-trash\"></i></button></a>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
@@ -159,24 +161,24 @@
             <div class="modal-content">
                 <form method="post" action="controller.php" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title">Tambah Produk</h4>
+                        <h4 class="modal-title" id="modal-title">Tambah Produk</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
-                            <label for="namaProduk" class="col-sm-4 col-form-label">Nama Product</label>
+                            <label for="namaProduk" class="col-sm-4 col-form-label font-weight-bold">Nama Product</label>
                             <div class="col-sm-8">
                             <input type="text" class="form-control" id="namaProduk" name="namaProduk" placeholder="Nama Produk">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="keteranganProduk" class="col-sm-4 col-form-label">Keterangan</label>
+                            <label for="keteranganProduk" class="col-sm-4 col-form-label font-weight-bold">Keterangan</label>
                             <div class="col-sm-8">
                             <input type="text" class="form-control" id="keteranganProduk" name="keteranganProduk" placeholder="Keterangan">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gambarProduk" class="col-sm-4 col-form-label">Gambar</label>    
+                            <label for="gambarProduk" class="col-sm-4 col-form-label font-weight-bold">Gambar</label>    
                             <div class="col-sm-8">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="gambarProduk" name="gambarProduk">
@@ -186,8 +188,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="function" value="simpanProduk">
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <input type="hidden" name="idProduk" id="idProduk" value="0">
+                        <input type="hidden" name="function" id="function" value="simpanProduk">
+                        <button type="submit" class="btn btn-success" id="btn-simpan">Simpan</button>
                     </div>
                 </form>
             </div>

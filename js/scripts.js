@@ -34,6 +34,18 @@ window.addEventListener("scroll", event => {
     });
 });
 
-// window.addEventListener("scroll", () => {
-//     _.throttle(doThatStuff, 100);
-// });
+$(".btn-edit").on('click', function(event) {
+    $('#namaProduk').val($(this).closest('.product-container').find('.namaProduk').html());
+    $('#idProduk').val($(this).closest('.product-container').find('.idProduk').val());
+    $('#keteranganProduk').val('Produk Baru Kami');
+    $('#function').val('editProduk');
+    $('#modal-title').html("Edit Produk");
+});
+
+$("#btn-tambah").on('click', function(event) {
+    $('#namaProduk').val("");
+    $('#idProduk').val("0");
+    $('#keteranganProduk').val('');
+    $('#function').val('tambahProduk');
+    $('#modal-title').html("Tambah Produk");
+});
