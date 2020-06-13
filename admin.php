@@ -116,7 +116,7 @@
                         echo "<div class=\"row row-product\">";
                         for ($j=0; $j < count($arrayProduct[$i]) ; $j++) { 
                             echo "<div class=\" col-md-4 product-container\">";
-                            echo "<div class=\"row\">";
+                            echo "<div class=\"row text-center\">";
                             echo "<div class=\"col-md-6\">";
                             echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][3] ."\">";
                             echo "</div>";
