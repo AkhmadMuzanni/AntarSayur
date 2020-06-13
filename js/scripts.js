@@ -60,3 +60,5 @@ $(".btn-delete").on('click', function(event) {
 $("#gambarProduk").on('change', function(event) {
     $("#labelGambar").html($(this).val().replace("C:\\fakepath\\", ""));
 });
+
+// console.log($('#notif').val());

@@ -4,7 +4,13 @@
     $no_telp = '6285749420404';
     $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
     $nama_product = 'Product+Ini';
+
+    echo $_SESSION['notif'];
     
+    if(!isset($_SESSION['notif'])){
+        $_SESSION['notif'] = '';
+    }
+
     $sql="SELECT * FROM product";
           
     $data_product = array(); 
@@ -33,6 +39,7 @@
 <html>
     <?php include 'header.php' ?>    
     <body>
+        <input type="hidden" id="notif" value="a<?php echo $_SESSION['notif'] ?>">
         <div id="container-nav-admin">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -138,7 +145,7 @@
             </div>
         </section>
         <footer class="text-white">
-            Copyright Republic Visual @2020
+            Copyright AntarSayur.id by Republic Visual @2020
         </footer>
 
         <!-- Modal -->
@@ -208,9 +215,7 @@
         </div>
         </div>
 
-
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/scripts.js"></script>
+        <?php include 'script.php' ?>    
+        
     </body>
 </html>

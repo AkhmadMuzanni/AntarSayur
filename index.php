@@ -9,6 +9,10 @@
           
     $data_product = array(); 
 
+    if(!isset($_SESSION['notif'])){
+        $_SESSION['notif'] = '';
+    }
+
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
             array_push($data_product, array($row[0], $row[1], $row[2], $row[3]));
@@ -33,6 +37,7 @@
 <html>
     <?php include 'header.php' ?>  
     <body>
+        <input type="hidden" id="notif" value="<?php (isset($_SESSION['notif']))?$_SESSION['notif']:'' ?>">
         <div id="container-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -208,10 +213,10 @@
             </div>
         </section>
         <footer class="text-white">
-            Copyright Republic Visual @2020
+            Copyright AntarSayur.id by Republic Visual @2020
         </footer>
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/scripts.js"></script>
+
+        <?php include 'script.php' ?>    
+
     </body>
 </html>

@@ -7,6 +7,10 @@
     $nama_product = 'Product+Ini';
     
     $sql="SELECT * FROM product";
+
+    if(!isset($_SESSION['notif'])){
+        $_SESSION['notif'] = '';
+    }
           
     $data_product = array(); 
 
@@ -84,8 +88,8 @@
         <footer>
             Copyright Republic Visual @2020
         </footer>
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/scripts.js"></script>
+
+        <?php include 'script.php' ?>    
+
     </body>
 </html>
