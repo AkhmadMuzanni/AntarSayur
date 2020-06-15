@@ -15,7 +15,7 @@
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
-            array_push($data_product, array($row[0], $row[1], $row[2], $row[3]));
+            array_push($data_product, array($row[0], $row[1], $row[2], $row[3], $row[4]));
         }
     }
 
@@ -24,7 +24,7 @@
 
     for ($i=0; $i < count($data_product) ; $i++) { 
         array_push($tempArray, $data_product[$i]);
-        if(count($tempArray) == 3 || $i == count($data_product) - 1){
+        if(count($tempArray) == 2 || $i == count($data_product) - 1){
             array_push($arrayProduct, $tempArray);
             $tempArray = array();
         }
@@ -59,21 +59,21 @@
                                 <a class="nav-link font-weight-bold nav-link-section" href="#contact">KONTAK</a>
                             </li>
                             <?php 
-                            if(isset($_SESSION["username"])){
-                                if($_SESSION['username'] == true && $_SESSION['password'] == true){
-                                    echo '<li class="nav-item">';
-                                    echo '<a class="nav-link font-weight-bold" href="admin.php">ADMIN</a>';
-                                    echo '</li>';
-                                } else {
-                                    echo '<li class="nav-item">';
-                                    echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
-                                    echo '</li>';
-                                }
-                            } else {
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
-                                echo '</li>';
-                            }
+                            // if(isset($_SESSION["username"])){
+                            //     if($_SESSION['username'] == true && $_SESSION['password'] == true){
+                            //         echo '<li class="nav-item">';
+                            //         echo '<a class="nav-link font-weight-bold" href="admin.php">ADMIN</a>';
+                            //         echo '</li>';
+                            //     } else {
+                            //         echo '<li class="nav-item">';
+                            //         echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
+                            //         echo '</li>';
+                            //     }
+                            // } else {
+                            //     echo '<li class="nav-item">';
+                            //     echo '<a class="nav-link font-weight-bold" href="login.php">LOGIN</a>';
+                            //     echo '</li>';
+                            // }
                             
                             ?>
                             
@@ -141,15 +141,16 @@
                     for ($i=0; $i < count($arrayProduct) ; $i++) { 
                         echo "<div class=\"row row-product\">";
                         for ($j=0; $j < count($arrayProduct[$i]) ; $j++) { 
-                            echo "<div class=\" col-md-4 product-container\">";
+                            echo "<div class=\" col-md-6 product-container\">";
                             echo "<div class=\"row text-center\">";
                             echo "<div class=\"col-md-6\">";
-                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][3] ."\">";
+                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][4] ."\">";
                             echo "</div>";
                             echo "<div class=\"col-md-6 info\">";
                             echo "<p class=\"font-weight-bold\">". $arrayProduct[$i][$j][1] ."</p>";
+                            echo "<p class=\"font-weight-bold\">Rp. ". $arrayProduct[$i][$j][3] ."</p>";
                             echo "<p>". $arrayProduct[$i][$j][2] ."</p>";
-                            echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  ORDER</button></a>";
+                            // echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . str_replace(" ","+",$arrayProduct[$i][$j][1]) . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  ORDER</button></a>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
