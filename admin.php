@@ -5,6 +5,10 @@
     $message = 'Hai+AntarSayur,+Saya+ingin+pesan+';
     $nama_product = 'Product+Ini';
 
+    if(!isset($_SESSION['username']) || (($_SESSION['username'] == false) || ($_SESSION['password'] == false)) ){
+        header('Location: login.php');
+    } else {
+        
     echo $_SESSION['notif'];
     
     if(!isset($_SESSION['notif'])){
@@ -230,3 +234,7 @@
         
     </body>
 </html>
+
+<?php
+}
+?>
