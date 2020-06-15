@@ -28,6 +28,40 @@
         echo $_POST['idProduk'];
         mysqli_query($link,"DELETE from `product` WHERE id=".$_POST['idProduk']);
         // $_SESSION['notif']  = 'hapusProduk';
+    } else if($_POST['function'] == 'simpanInformasi'){
+        $data_informasi = array(); 
+
+        $sql="SELECT * FROM information";
+
+        if ($result=mysqli_query($link,$sql)){
+            while ($row=mysqli_fetch_row($result)){
+                array_push($data_informasi, array($row[0], $row[1], $row[2]));
+            }
+        }
+
+        for ($i=0; $i < count($data_informasi) ; $i++) { 
+            switch ($data_informasi[$i][1]) {
+                case 'instagram':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['instagram'] . "\" WHERE id=" .($i+1));
+                break;
+                case 'facebook':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['facebook'] . "\" WHERE id=" .($i+1));
+                break;
+                case 'twitter':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['twitter'] . "\" WHERE id=" .($i+1));
+                break;
+                case 'no_telp':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['nomor_wa'] . "\" WHERE id=" .($i+1));
+                break;
+                case 'username':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['username'] . "\" WHERE id=" .($i+1));
+                break;
+                case 'password':
+                    mysqli_query($link,"UPDATE `information` SET value=\"" . $_POST['password'] . "\" WHERE id=" .($i+1));
+                break;
+            }
+        }
+        // $_SESSION['notif']  = 'hapusProduk';
     }
     // echo $_SESSION['notif'];
     // header('Location: admin.php');

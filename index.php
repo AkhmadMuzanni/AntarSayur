@@ -8,10 +8,13 @@
     $sql="SELECT * FROM product";
           
     $data_product = array(); 
+    $data_informasi = array(); 
 
     if(!isset($_SESSION['notif'])){
         $_SESSION['notif'] = '';
     }
+
+    // Get Product Data
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
@@ -27,6 +30,38 @@
         if(count($tempArray) == 2 || $i == count($data_product) - 1){
             array_push($arrayProduct, $tempArray);
             $tempArray = array();
+        }
+    }
+
+    // Get Information Data
+
+    $sql="SELECT * FROM information";
+
+    if ($result=mysqli_query($link,$sql)){
+        while ($row=mysqli_fetch_row($result)){
+            array_push($data_informasi, array($row[0], $row[1], $row[2]));
+        }
+    }
+
+    $value_instagram = '';
+    $value_facebook = '';
+    $value_twitter = '';
+    $value_no_telp = '';
+
+    for ($i=0; $i < count($data_informasi) ; $i++) { 
+        switch ($data_informasi[$i][1]) {
+            case 'instagram':
+                $value_instagram = $data_informasi[$i][2];
+            break;
+            case 'facebook':
+                $value_facebook = $data_informasi[$i][2];
+            break;
+            case 'twitter':
+                $value_twitter = $data_informasi[$i][2];
+            break;
+            case 'no_telp':
+                $no_telp = $data_informasi[$i][2];
+            break;
         }
     }
 
@@ -200,19 +235,19 @@
                         <div class="line-subtitle"></div>
                         <div class="row">
                             <p class="col-md-3">Instagram</p>
-                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                            <p class="col-md-9">: <strong><?php echo $value_instagram ?></strong></p>
                         </div>
                         <div class="row">
                             <p class="col-md-3">Facebook</p>
-                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                            <p class="col-md-9">: <strong><?php echo $value_facebook ?></strong></p>
                         </div>
                         <div class="row">
                             <p class="col-md-3">Twitter</p>
-                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                            <p class="col-md-9">: <strong><?php echo $value_twitter ?></strong></p>
                         </div>
 
                         <div class="text-center">
-                            <?php echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  HUBUNGI KAMI VIA WA</button></a>"; ?>
+                            <?php echo "<a href=\"https://api.whatsapp.com/send?phone=" . $value_no_telp . "&text=Hai+AntarSayur\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  HUBUNGI KAMI VIA WA</button></a>"; ?>
                         </div>
                         
                         <!-- <div>

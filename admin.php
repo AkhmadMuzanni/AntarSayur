@@ -8,16 +8,19 @@
     if(!isset($_SESSION['username']) || (($_SESSION['username'] == false) || ($_SESSION['password'] == false)) ){
         header('Location: login.php');
     } else {
-        
+
     echo $_SESSION['notif'];
     
     if(!isset($_SESSION['notif'])){
         $_SESSION['notif'] = '';
     }
 
+    // Get Product Data
+
     $sql="SELECT * FROM product";
           
     $data_product = array(); 
+    $data_informasi = array(); 
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
@@ -33,6 +36,46 @@
         if(count($tempArray) == 2 || $i == count($data_product) - 1){
             array_push($arrayProduct, $tempArray);
             $tempArray = array();
+        }
+    }
+
+    // Get Information Data
+
+    $sql="SELECT * FROM information";
+
+    if ($result=mysqli_query($link,$sql)){
+        while ($row=mysqli_fetch_row($result)){
+            array_push($data_informasi, array($row[0], $row[1], $row[2]));
+        }
+    }
+
+    $value_username = '';
+    $value_password = '';
+    $value_instagram = '';
+    $value_facebook = '';
+    $value_twitter = '';
+    $value_no_telp = '';
+
+    for ($i=0; $i < count($data_informasi) ; $i++) { 
+        switch ($data_informasi[$i][1]) {
+            case 'instagram':
+                $value_instagram = $data_informasi[$i][2];
+            break;
+            case 'facebook':
+                $value_facebook = $data_informasi[$i][2];
+            break;
+            case 'twitter':
+                $value_twitter = $data_informasi[$i][2];
+            break;
+            case 'no_telp':
+                $value_no_telp = $data_informasi[$i][2];
+            break;
+            case 'username':
+                $value_username = $data_informasi[$i][2];
+            break;
+            case 'password':
+                $value_password = $data_informasi[$i][2];
+            break;
         }
     }
 
@@ -59,6 +102,9 @@
                                 <a class="nav-link font-weight-bold text-white" href="index.php">BERANDA <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link font-weight-bold text-white" href="#information">INFORMASI</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link font-weight-bold text-white" href="#product">PRODUCT</a>
                             </li>
                             <li class="nav-item">
@@ -69,8 +115,76 @@
                 </nav>
             </div>
         </div>
-        
-            
+         
+        <section class="information" id="information">
+            <div class="container">
+                <h1 class="text-center">Informasi</h1>
+                <div class="text-center">
+                    <img src="img/line.png" class="line-section" >
+                </div>
+                <div id="form-informasi">
+                    <form action="controller.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="username">Username</label>
+                                    <div class="col-md-9">
+                                        <input type="string" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $value_username ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="password">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?php echo $value_password ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="nomor_wa">Nomor WA</label>
+                                    <div class="col-md-9">
+                                        <input type="string" class="form-control" name="nomor_wa" id="nomor_wa" placeholder="Nomor Whatsapp" value="<?php echo $value_no_telp ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="instagram">Instagram</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="instagram" id="instagram" placeholder="Akun Instagram" value="<?php echo $value_instagram ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="facebook">Facebook</label>
+                                    <div class="col-md-9">
+                                        <input type="string" class="form-control" name="facebook" id="facebook" placeholder="Akun Facebook" value="<?php echo $value_facebook ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-md-3" for="twitter">Twitter</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="twitter" id="twitter" placeholder="Akun Twitter" value="<?php echo $value_twitter ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="function" id="function" value="simpanInformasi">
+                        <button type="submit" class="btn btn-success float-right" id="btn-simpan-perubahan">SIMPAN PERUBAHAN</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
         <section class="page-section" id="product">
             <div class="container" id="product-admin">
                 <h1 class="text-center">Produk Saya</h1>
@@ -190,10 +304,14 @@
                             <label for="gambarProduk" class="col-sm-4 col-form-label font-weight-bold">Gambar</label>    
                             <div class="col-sm-8">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="gambarProduk" name="gambarProduk">
+                                    <input type="file" class="custom-file-input" id="gambarProduk" name="gambarProduk" accept='image/*'>
                                     <label class="custom-file-label" for="gambarProduk" id="labelGambar">Pilih Gambar...</label>
                                 </div>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    File harus berupa file .jpg/.png dengan ukuran maksimal 2MB.
+                                </small>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="modal-footer">

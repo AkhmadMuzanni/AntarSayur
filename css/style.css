@@ -122,10 +122,6 @@ footer {
     width: 100%;
 }
 
-#product-admin {
-    padding-top: 50px;
-}
-
 .product-list-admin {
     padding-top: 20px;
 }
@@ -161,4 +157,12 @@ footer {
     #container-login {
         width: 100%;
     }
+}
+
+#information {
+    padding-top: 80px;
+}
+
+#form-informasi {
+    margin-top: 30px;
 }
