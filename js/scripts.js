@@ -38,6 +38,7 @@ $(".btn-edit").on('click', function(event) {
     $('#namaProduk').val($(this).closest('.product-container').find('.namaProduk').html());
     $('#idProduk').val($(this).closest('.product-container').find('.idProduk').val());
     $('#keteranganProduk').val($(this).closest('.product-container').find('.keteranganProduk').html());
+    $('#hargaProduk').val($(this).closest('.product-container').find('.hargaProduk').html());
     $('#function').val('editProduk');
     $('#modal-title').html("Edit Produk");
     $("#labelGambar").html("Pilih Gambar");
@@ -45,6 +46,7 @@ $(".btn-edit").on('click', function(event) {
 
 $("#btn-tambah").on('click', function(event) {
     $('#namaProduk').val("");
+    $('#hargaProduk').val("");
     $('#idProduk').val("0");
     $('#keteranganProduk').val('');
     $('#function').val('tambahProduk');

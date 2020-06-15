@@ -17,7 +17,7 @@
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
-            array_push($data_product, array($row[0], $row[1], $row[2], $row[3]));
+            array_push($data_product, array($row[0], $row[1], $row[2], $row[3], $row[4]));
         }
     }
 
@@ -26,7 +26,7 @@
 
     for ($i=0; $i < count($data_product) ; $i++) { 
         array_push($tempArray, $data_product[$i]);
-        if(count($tempArray) == 3 || $i == count($data_product) - 1){
+        if(count($tempArray) == 2 || $i == count($data_product) - 1){
             array_push($arrayProduct, $tempArray);
             $tempArray = array();
         }
@@ -122,13 +122,14 @@
                     for ($i=0; $i < count($arrayProduct) ; $i++) { 
                         echo "<div class=\"row row-product\">";
                         for ($j=0; $j < count($arrayProduct[$i]) ; $j++) { 
-                            echo "<div class=\" col-md-4 product-container\">";
+                            echo "<div class=\" col-md-6 product-container\">";
                             echo "<div class=\"row text-center\">";
                             echo "<div class=\"col-md-6\">";
-                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][3] ."\">";
+                            echo "<img class=\"img-product\" src=\"img/product/". $arrayProduct[$i][$j][4] ."\">";
                             echo "</div>";
                             echo "<div class=\"col-md-6 info\">";
                             echo "<p class=\"font-weight-bold namaProduk\">". $arrayProduct[$i][$j][1] ."</p>";
+                            echo "<p class=\"font-weight-bold hargaProduk\">". $arrayProduct[$i][$j][3] ."</p>";
                             echo "<p class=\"keteranganProduk\">". $arrayProduct[$i][$j][2] ."</p>";
                             echo "<input type=\"hidden\" class=\"idProduk\" value=\"".$arrayProduct[$i][$j][0]."\"></input>";
                             echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button>";
@@ -163,6 +164,16 @@
                             <label for="namaProduk" class="col-sm-4 col-form-label font-weight-bold">Nama Product</label>
                             <div class="col-sm-8">
                             <input type="text" class="form-control" id="namaProduk" name="namaProduk" placeholder="Nama Produk">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="hargaProduk" class="col-sm-4 col-form-label font-weight-bold">Harga Product</label>
+                            <div class="input-group col-sm-8">
+                                <!-- <input type="number" class="form-control" id="hargaProduk" name="hargaProduk" placeholder="Harga Produk"> -->
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Rp.</div>
+                                </div>
+                                <input type="number" class="form-control" id="hargaProduk" name="hargaProduk" placeholder="Harga Produk">
                             </div>
                         </div>
                         <div class="form-group row">
