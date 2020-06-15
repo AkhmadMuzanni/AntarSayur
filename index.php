@@ -173,7 +173,9 @@
                     <div class="col-md-4">
                         <h4 class="sub-section-title">LOKASI</h4>
                         <div class="line-subtitle"></div>
-                        <div id="maps-contact">
+                        <p>Jalan Suropati I A No. 18 RT. 13 RW. 04</p>
+                        <p>Kecamatan Bululawang, Kabupaten Malang</p>
+                        <!-- <div id="maps-contact">
                             <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
                             <script>
                                 // initialize the map
@@ -191,12 +193,29 @@
                                     .bindPopup('Republic Visual Malang')
                                     .openPopup();
                             </script>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-md-4">
                         <h4 class="sub-section-title">KONTAK KAMI</h4>
                         <div class="line-subtitle"></div>
-                        <div>
+                        <div class="row">
+                            <p class="col-md-3">Instagram</p>
+                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="col-md-3">Facebook</p>
+                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                        </div>
+                        <div class="row">
+                            <p class="col-md-3">Twitter</p>
+                            <p class="col-md-9">: <strong>AntarSayur</strong></p>
+                        </div>
+
+                        <div class="text-center">
+                            <?php echo "<a href=\"https://api.whatsapp.com/send?phone=" . $no_telp . "&text=" . $message . "\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fab fa-whatsapp\"></i>  HUBUNGI KAMI VIA WA</button></a>"; ?>
+                        </div>
+                        
+                        <!-- <div>
                             <form>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama</label>
@@ -208,7 +227,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-success float-right">KIRIM</button>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
