@@ -9,6 +9,7 @@
           
     $data_product = array(); 
     $data_informasi = array(); 
+    $data_carousel = array(); 
 
     if(!isset($_SESSION['notif'])){
         $_SESSION['notif'] = '';
@@ -65,6 +66,16 @@
         }
     }
 
+    // Get Carousel Data
+
+    $sql="SELECT * FROM carousel";
+
+    if ($result=mysqli_query($link,$sql)){
+        while ($row=mysqli_fetch_row($result)){
+            array_push($data_carousel, array($row[0], $row[1], $row[2], $row[3]));
+        }
+    }
+
     // print_r($arrayProduct);
 
     mysqli_close($link);
@@ -117,14 +128,73 @@
                 </nav>
             </div>
         </div>
-        
     
-        <section class="header" id="home">
-            <div class="container">
-                <!-- <h3 class="text-center text-white" id="title">Selamat Datang</h3> -->
-                <!-- <h1 class="text-center text-white" id="subtitle">AntarSayur.id</h1> -->
+        <section id="home">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <?php 
+                        for ($i=0; $i < count($data_carousel) ; $i++) { 
+                            $active = "";
+                            if($i == 0){
+                                $active = 'active';
+                            }
+                            echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"". $i ."\" class=\"$active\"></li>";
+                        }
+                    ?>
+                    <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+                </ol>
+                <div class="carousel-inner">
+                    <?php 
+                        for ($i=0; $i < count($data_carousel) ; $i++) { 
+                            $active = "";
+                            if($i == 0){
+                                $active = 'active';
+                            }
+                            echo "<div class=\"carousel-item ".$active."\">";
+                            echo "<img class=\"d-block w-100 h-100\" src=\"img/carousel/". $data_carousel[$i][3] ."\" alt=\"First slide\" style=\"filter: brightness(50%);\">";
+                            echo "<div class=\"carousel-caption d-none d-md-block\">";
+                            echo "<h5>". $data_carousel[$i][1] ."</h5>";
+                            echo "<p>". $data_carousel[$i][2] ."</p>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    ?>
+                    <!-- <div class="carousel-item active">
+                        <img class="d-block w-100 h-100" src="img/carousel/carousel1.jpg" alt="First slide" style="filter: brightness(50%);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Slide Pertama</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 h-100" src="img/carousel/carousel2.jpg" alt="Second slide" style="filter: brightness(50%);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Slide Kedua</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 h-100" src="img/carousel/carousel3.jpg" alt="Third slide" style="filter: brightness(50%);">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Slide Ketiga</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div> -->
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
+
         </section>
+        
         <section class="page-section" id="product">
             <div class="container">
                 <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
