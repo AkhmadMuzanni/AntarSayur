@@ -187,6 +187,11 @@
         </section>
         <section class="page-section" id="product">
             <div class="container" id="product-admin">
+                <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+                    <a href=<?php echo "\"https://api.whatsapp.com/send?phone=" . $value_no_telp . "&text=Hai+AntarSayur\""  ?> class="btn-floating btn-lg btn-success" data-toggle="tooltip" title="Chat Whatsapp">
+                        <i class="fab fa-whatsapp text-white" style="display: flex; height: 100%;"></i>
+                    </a>
+                </div>
                 <h1 class="text-center">Produk Saya</h1>
                 <div class="text-center">
                     <img src="img/line.png" class="line-section" >

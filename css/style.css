@@ -166,3 +166,32 @@ footer {
 #form-informasi {
     margin-top: 30px;
 }
+
+.fixed-action-btn {
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 998;
+    margin-bottom: 0;
+    overflow: hidden;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    padding: 15px 15px 15px 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn-floating {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
