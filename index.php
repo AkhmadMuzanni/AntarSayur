@@ -272,6 +272,10 @@
                 
             </div>
         </section>
+        <section class="text-center" id="ulasan">
+            <p class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
+            <p class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
+        </section>
         <section id="contact">
             <div class="container">
                 <div class="row">
@@ -310,15 +314,15 @@
                         <div class="line-subtitle"></div>
                         <div class="row">
                             <p class="col-md-3">Instagram</p>
-                            <p class="col-md-9">: <strong><?php echo $value_instagram ?></strong></p>
+                            <p class="col-md-9">: <a href=<?php echo "\"https://www.instagram.com/".$value_instagram."\"" ?>><strong><?php echo $value_instagram ?></strong></a></p>
                         </div>
                         <div class="row">
                             <p class="col-md-3">Facebook</p>
-                            <p class="col-md-9">: <strong><?php echo $value_facebook ?></strong></p>
+                            <p class="col-md-9">: <a href=<?php echo "\"https://www.facebook.com/".$value_facebook."\"" ?>><strong><?php echo $value_facebook ?></strong></a></p>
                         </div>
                         <div class="row">
                             <p class="col-md-3">Twitter</p>
-                            <p class="col-md-9">: <strong><?php echo $value_twitter ?></strong></p>
+                            <p class="col-md-9">: <a href=<?php echo "\"https://twitter.com/".$value_twitter."\""?>><strong><?php echo $value_twitter ?></strong></a></p>
                         </div>
 
                         <div class="text-center">
