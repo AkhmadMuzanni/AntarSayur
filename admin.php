@@ -215,10 +215,16 @@
                 <div class="text-center">
                     <img src="img/line.png" class="line-section" >
                 </div>
+                <?php 
+                if(count($data_carousel) < 6){
+                ?>
                 <div>
                     <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#modalCarousel" id="btn-tambah-carousel">TAMBAH CAROUSEL</button>
                     <div class="clearfix"></div>
                 </div>
+                <?php 
+                }
+                ?>
                 <div id="list-carousel">
                     <!-- <form action="controller.php" method="post">
                     </form> -->
