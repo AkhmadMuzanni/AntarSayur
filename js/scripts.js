@@ -34,6 +34,8 @@ window.addEventListener("scroll", event => {
     });
 });
 
+// CRUD Product
+
 $(".btn-edit").on('click', function(event) {
     $('#namaProduk').val($(this).closest('.product-container').find('.namaProduk').html());
     $('#idProduk').val($(this).closest('.product-container').find('.idProduk').val());
@@ -55,12 +57,47 @@ $("#btn-tambah").on('click', function(event) {
 });
 
 $(".btn-delete").on('click', function(event) {
+    console.log($(this).closest('.product-container').find('.namaProduk'));
     console.log($(this).closest('.product-container').find('.idProduk').val());
-    $('#idProdukHapus').val($(this).closest('.product-container').find('.idProduk').val());
+    $('#konfirmasiHapus').html('Apakah Anda yakin akan menghapus Produk Ini?');
+    $('#functionHapus').val('deleteProduk');
+    $('#idHapus').val($(this).closest('.product-container').find('.idProduk').val());
 });
 
 $("#gambarProduk").on('change', function(event) {
     $("#labelGambar").html($(this).val().replace("C:\\fakepath\\", ""));
+});
+
+// CRUD Carousel
+
+$(".btn-edit-carousel").on('click', function(event) {
+    $('#judulCarousel').val($(this).closest('.carousel-container').find('.judulCarousel').val());
+    $('#teksCarousel').html($(this).closest('.carousel-container').find('.teksCarousel').html());
+    $('#idCarousel').val($(this).closest('.carousel-container').find('.idCarousel').val());
+    $('#functionCarousel').val('editCarousel');
+    $('#modal-title-carousel').html("Edit Carousel");
+    $("#labelGambarCarousel").html("Pilih Gambar");
+});
+
+$("#btn-tambah-carousel").on('click', function(event) {
+    $('#judulCarousel').val("");
+    $('#teksCarousel').html("");
+    $('#functionCarousel').val('tambahCarousel');
+    $('#idCarousel').val("0");
+    $('#modal-title-carousel').html("Tambah Carousel");
+    $("#labelGambarCarousel").html("Pilih Gambar");
+});
+
+$(".btn-delete-carousel").on('click', function(event) {
+    console.log($(this).closest('.carousel-container'));
+    console.log($(this).closest('.carousel-container').find('.idCarousel').val());
+    $('#konfirmasiHapus').html('Apakah Anda yakin akan menghapus Carousel Ini?');
+    $('#functionHapus').val('deleteCarousel');
+    $('#idHapus').val($(this).closest('.carousel-container').find('.idCarousel').val());
+});
+
+$("#gambarCarousel").on('change', function(event) {
+    $("#labelGambarCarousel").html($(this).val().replace("C:\\fakepath\\", ""));
 });
 
 // console.log($('#notif').val());

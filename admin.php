@@ -21,6 +21,7 @@
           
     $data_product = array(); 
     $data_informasi = array(); 
+    $data_carousel = array(); 
 
     if ($result=mysqli_query($link,$sql)){
         while ($row=mysqli_fetch_row($result)){
@@ -78,6 +79,28 @@
             break;
         }
     }
+
+    // Get Carousel Data
+
+    $sql="SELECT * FROM carousel";
+
+    if ($result=mysqli_query($link,$sql)){
+        while ($row=mysqli_fetch_row($result)){
+            array_push($data_carousel, array($row[0], $row[1], $row[2], $row[3]));
+        }
+    }
+
+    $arrayCarousel = array();
+    $tempArray = array();
+
+    for ($i=0; $i < count($data_carousel) ; $i++) { 
+        array_push($tempArray, $data_carousel[$i]);
+        if(count($tempArray) == 2 || $i == count($data_carousel) - 1){
+            array_push($arrayCarousel, $tempArray);
+            $tempArray = array();
+        }
+    }
+
 
     // print_r($arrayProduct);
 
@@ -178,13 +201,105 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="function" id="function" value="simpanInformasi">
+                        <input type="hidden" name="function" id="functionInformasi" value="simpanInformasi">
                         <button type="submit" class="btn btn-success float-right" id="btn-simpan-perubahan">SIMPAN PERUBAHAN</button>
                         <div class="clearfix"></div>
                     </form>
                 </div>
             </div>
         </section>
+
+        <section id="carousel-section">
+            <div class="container">
+                <h1 class="text-center">Carousel</h1>
+                <div class="text-center">
+                    <img src="img/line.png" class="line-section" >
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#modalCarousel" id="btn-tambah-carousel">TAMBAH CAROUSEL</button>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="list-carousel">
+                    <!-- <form action="controller.php" method="post">
+                    </form> -->
+                    <?php 
+                    for ($i=0; $i < count($arrayCarousel) ; $i++) { 
+                        echo "<div class=\"row row-product\">";
+                        for ($j=0; $j < count($arrayCarousel[$i]) ; $j++) { 
+                            echo "<div class=\"col-md-6 carousel-container\">";
+                            echo "<div class=\"row\">";
+                            echo "<div class=\"col-md-4 text-center\">";
+                            echo "<img class=\"img-product\" src=\"img/carousel/".$arrayCarousel[$i][$j][3]."\">";
+                            echo "</div>";
+                            echo "<div class=\"col-md-8 info\">";
+                            echo "<p class=\"font-weight-bold\">Carousel ".(($i*2) + $j + 1)."</p>";
+                            echo "<div class=\"form-group\">";
+                            echo "<label for=\"carousel1\" class=\"text-left\">Judul</label>";
+                            echo "<input type=\"string\" class=\"form-control judulCarousel\" name=\"judulCarousel\" placeholder=\"Judul Carousel\" value=\"".$arrayCarousel[$i][$j][1]."\" disabled>";
+                            echo "</div>";
+                            echo "<div class=\"form-group\">";
+                            echo "<label for=\"teksCarousel\" class=\"text-left\">Teks</label>";
+                            echo "<textarea class=\"form-control teksCarousel\" name=\"teksCarousel\" rows=\"3\" placeholder=\"Teks Carousel\" disabled>".$arrayCarousel[$i][$j][2]."</textarea>";
+                            echo "</div>";
+                            echo "<input type=\"hidden\" class=\"idCarousel\" value=\"".$arrayCarousel[$i][$j][0]."\"></input>";
+                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit-carousel\" data-toggle=\"modal\" data-target=\"#modalCarousel\"><i class=\"fa fa-edit\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete-carousel\" data-toggle=\"modal\" data-target=\"#modalDelete\"><i class=\"fa fa-trash\"></i></button>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                        echo "</div>";
+                    }
+                    ?>
+
+                    <!-- <div class="row row-product">
+                        <div class=" col-md-6 carousel-container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
+                                </div>
+                                <div class="col-md-8 info">
+                                    <p class="font-weight-bold">Carousel 1</p>
+                                    <div class="form-group">
+                                        <label for="carousel1" class="text-left">Judul</label>
+                                        <input type="string" class="form-control" name="judulCarousel" id="judulCarousel" placeholder="Judul Carousel" value="klsalska">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="teksCarousel" class="text-left">Teks</label>
+                                        <textarea class="form-control" name="teksCarousel" id="teksCarousel" rows="3" placeholder="Teks Carousel"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-info btn-admin btn-edit" data-toggle="modal" data-target="#modalCarousel"><i class="fa fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger btn-admin btn-delete" data-toggle="modal" data-target="#modalDelete"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-6 carousel-container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <img class="img-product" src="img/product/product_1.jpg" alt="">
+                                </div>
+                                <div class="col-md-8 info">
+                                    <p class="font-weight-bold">Carousel 1</p>
+                                    <div class="form-group">
+                                        <label for="carousel1" class="text-left">Judul</label>
+                                        <input type="string" class="form-control" name="judulCarousel" id="judulCarousel" placeholder="Judul Carousel" value="klsalska">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="teksCarousel" class="text-left">Teks</label>
+                                        <textarea class="form-control" name="teksCarousel" id="teksCarousel" rows="3" placeholder="Teks Carousel"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-info btn-admin btn-edit" data-toggle="modal" data-target="#modalCarousel"><i class="fa fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger btn-admin btn-delete" data-toggle="modal" data-target="#modalDelete"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </section>
+
         <section class="page-section" id="product">
             <div class="container" id="product-admin">
                 <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
@@ -340,13 +455,60 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Apakah Anda yakin akan menghapus Produk Ini?</p>
+                        <p id="konfirmasiHapus">Apakah Anda yakin akan menghapus Produk Ini?</p>
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="idProduk" id="idProdukHapus" value="0">
-                        <input type="hidden" name="function" id="function" value="deleteProduk">
+                        <input type="hidden" name="idHapus" id="idHapus" value="0">
+                        <input type="hidden" name="function" id="functionHapus" value="deleteProduk">
                         <button type="submit" class="btn btn-danger" id="btn-simpan">HAPUS</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">KEMBALI</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modalCarousel" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form method="post" action="controller.php" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-title-carousel">Tambah Carousel</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label for="judulCarousel" class="col-sm-4 col-form-label font-weight-bold">Judul</label>
+                            <div class="col-sm-8">
+                            <input type="text" class="form-control" id="judulCarousel" name="judulCarousel" placeholder="Judul Carousel">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="teksCarousel" class="col-sm-4 col-form-label font-weight-bold">Teks</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" name="teksCarousel" id="teksCarousel" rows="3" placeholder="Teks Carousel"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="gambarProduk" class="col-sm-4 col-form-label font-weight-bold">Gambar</label>    
+                            <div class="col-sm-8">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="gambarCarousel" name="gambarCarousel" accept='image/*'>
+                                    <label class="custom-file-label" for="gambarCarousel" id="labelGambarCarousel">Pilih Gambar...</label>
+                                </div>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    File harus berupa file .jpg/.png dengan ukuran maksimal 2MB.
+                                </small>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="idCarousel" id="idCarousel" value="0">
+                        <input type="hidden" name="function" id="functionCarousel" value="tambahCarousel">
+                        <button type="submit" class="btn btn-success" id="btn-simpan">Simpan</button>
                     </div>
                 </form>
             </div>
