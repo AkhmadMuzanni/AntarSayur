@@ -6,7 +6,7 @@
     $nama_product = 'Product+Ini';
 
     if(!isset($_SESSION['username']) || (($_SESSION['username'] == false) || ($_SESSION['password'] == false)) ){
-        header('Location: login.php');
+        echo "<script>window.location.href='login.php';</script>";
     } else {
 
     echo $_SESSION['notif'];
@@ -248,8 +248,8 @@
                             echo "<textarea class=\"form-control teksCarousel\" name=\"teksCarousel\" rows=\"3\" placeholder=\"Teks Carousel\" disabled>".$arrayCarousel[$i][$j][2]."</textarea>";
                             echo "</div>";
                             echo "<input type=\"hidden\" class=\"idCarousel\" value=\"".$arrayCarousel[$i][$j][0]."\"></input>";
-                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit-carousel\" data-toggle=\"modal\" data-target=\"#modalCarousel\"><i class=\"fa fa-edit\"></i></button>";
-                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete-carousel\" data-toggle=\"modal\" data-target=\"#modalDelete\"><i class=\"fa fa-trash\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit-carousel\" data-toggle=\"modal\" data-target=\"#modalCarousel\" data-toggle=\"tooltip\" title=\"Edit Carousel\"><i class=\"fa fa-edit\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete-carousel\" data-toggle=\"modal\" data-target=\"#modalDelete\" data-toggle=\"tooltip\" title=\"Hapus Carousel\"><i class=\"fa fa-trash\"></i></button>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
@@ -376,8 +376,8 @@
                             echo "<p class=\"font-weight-bold hargaProduk\">". $arrayProduct[$i][$j][3] ."</p>";
                             echo "<p class=\"keteranganProduk\">". $arrayProduct[$i][$j][2] ."</p>";
                             echo "<input type=\"hidden\" class=\"idProduk\" value=\"".$arrayProduct[$i][$j][0]."\"></input>";
-                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fa fa-edit\"></i></button>";
-                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete\" data-toggle=\"modal\" data-target=\"#modalDelete\"><i class=\"fa fa-trash\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-info btn-admin btn-edit\" data-toggle=\"modal\" data-target=\"#myModal\" data-toggle=\"tooltip\" title=\"Edit Produk\"><i class=\"fa fa-edit\"></i></button>";
+                            echo "<button type=\"button\" class=\"btn btn-danger btn-admin btn-delete\" data-toggle=\"modal\" data-target=\"#modalDelete\" data-toggle=\"tooltip\" title=\"Hapus Produk\"><i class=\"fa fa-trash\"></i></button>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
